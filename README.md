@@ -72,3 +72,4 @@ Like functions in a programming language, can pass values into and return values
 ## Additional Content
 
 * Granting access to other repos in the org to have access to actions
+* GitHub vs Hosted Runners

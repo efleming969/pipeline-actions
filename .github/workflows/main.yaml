@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: '.github/actions/greeting'
+      - uses: './actions/greeting'
         id: greeting
         with:
           name: 'erick'
