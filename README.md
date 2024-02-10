@@ -73,3 +73,4 @@ Like functions in a programming language, can pass values into and return values
 
 * Granting access to other repos in the org to have access to actions
 * GitHub vs Hosted Runners
+* When using Act and upload artifact it seems the directory need to be created already

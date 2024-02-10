@@ -18,3 +18,6 @@ jobs:
       - run: |
           echo 'results of previous step'
           echo ${{ steps.greeting.outputs.result }}
+
+  job2:
+    uses: './workflows/create-an-artifact.yaml'

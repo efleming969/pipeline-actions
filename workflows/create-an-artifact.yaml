@@ -1,0 +1,26 @@
+name: 'create-an-artifact'
+
+on:
+  workflow_call:
+    inputs:
+      VERSION:
+        description: "version of artifact"
+        type: string
+        required: true
+
+jobs:
+
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - shell: bash
+        run: |
+          mkdir ./dist
+          echo '{"version":"1234"}' > ./dist/version.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: |
+            './dist'
