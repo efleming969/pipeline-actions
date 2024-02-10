@@ -21,3 +21,5 @@ jobs:
 
   job2:
     uses: './workflows/create-an-artifact.yaml'
+    with:
+      VERSION: '11111111111111111111'

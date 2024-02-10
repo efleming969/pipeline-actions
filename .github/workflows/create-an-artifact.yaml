@@ -17,7 +17,7 @@ jobs:
       - shell: bash
         run: |
           mkdir ./dist
-          echo '{"version":"1234"}' > ./dist/version.json
+          echo '{"version":"${{ inputs.VERSION }}"}' > ./dist/version.json
 
       - uses: actions/upload-artifact@v4
         with:
