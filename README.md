@@ -38,6 +38,8 @@ Set of GitHub Actions to explore the capabilities of the platform
 ## Steps
 
 * Optional naming
+* Bash
+* JQ
 
 ## Composite Actions
 

@@ -2,8 +2,6 @@ name: Main
 
 on:
   push:
-    branches:
-      test
 
 jobs:
   job1:
@@ -12,5 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: './actions/greeting'
+        id: greeting
+        with:
+          name: 'erick'
+
       - run: |
-          echo 'hello, world'
+          echo 'results of previous step'
+          echo ${{ steps.greeting.outputs.result }}
