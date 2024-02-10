@@ -68,3 +68,7 @@ Like functions in a programming language, can pass values into and return values
     * reference it from the main workflow and observe the outcome locally
 3. Call a re-usable workflow from a separate repository
     * Versioning
+
+## Additional Content
+
+* Granting access to other repos in the org to have access to actions
