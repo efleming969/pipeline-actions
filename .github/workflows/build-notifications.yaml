@@ -22,8 +22,6 @@ jobs:
   notification:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - uses: 'efleming969/pipeline-actions/actions/build-notification-payload@trunk'
         id: build_notification_payload
         with:
