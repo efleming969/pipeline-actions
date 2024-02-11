@@ -22,6 +22,8 @@ jobs:
   notification:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - uses: './actions/build-notification-payload'
         id: build_notification_payload
         with:
