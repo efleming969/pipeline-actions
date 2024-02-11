@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: './actions/build-notification-payload'
+      - uses: 'efleming969/pipeline-actions/actions/build-notification-payload@trunk'
         id: build_notification_payload
         with:
           needs: ${{ toJSON( inputs.needs ) }}
