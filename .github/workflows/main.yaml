@@ -20,6 +20,7 @@ jobs:
           echo ${{ steps.greeting.outputs.result }}
 
   job2:
-    uses: './.github/workflows/create-an-artifact.yaml'
+    needs: [ job1 ]
+    uses: './.github/workflows/reusable.yaml'
     with:
-      VERSION: '11111111111111111111'
+      name: "World"

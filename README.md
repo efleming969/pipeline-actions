@@ -4,6 +4,19 @@ Set of GitHub Actions to explore the capabilities of the platform
 
 # Workshop
 
+## Objectives
+
+* Construct a repository workflow the encodes the patterns and conventions within the
+  organization
+* Describe the tooling support for building pipelines
+* Identify 3 ways to pass data between jobs
+* List 3 types of composite actions
+    - docker
+    - javascript
+    - shell
+* Create a composite action and integrated into a workflow
+* Create a re-usable workflow and integrate into a primary workflow
+
 ## The Delivery Pipeline
 
 * Supports the primary practices of Continuous Delivery
@@ -44,19 +57,6 @@ Set of GitHub Actions to explore the capabilities of the platform
 ## Composite Actions
 
 Like functions in a programming language, can pass values into and return values back
-
-## Objectives
-
-* Construct a repository workflow the encodes the patterns and conventions within the
-  organization
-* Describe the tooling support for building pipelines
-* Identify 3 ways to pass data between jobs
-* List 3 types of composite actions
-    - docker
-    - javascript
-    - shell
-* Create a composite action and integrated into a workflow
-* Create a re-usable workflow and integrate into a primary workflow
 
 ## Exercises
 
