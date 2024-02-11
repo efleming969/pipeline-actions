@@ -1,0 +1,36 @@
+name: 'build-notifications'
+
+on:
+  workflow_call:
+    secrets:
+      slack_token:
+        description: "token for sending slack messages"
+        type: string
+        required: true
+
+    inputs:
+      needs:
+        description: "needs"
+        type: string
+        required: true
+      channel:
+        description: "needs"
+        type: string
+        required: true
+
+jobs:
+
+  notification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: './actions/build-notification-payload'
+        id: build_notification_payload
+        with:
+          needs: ${{ toJSON( input.needs ) }}
+
+      - uses: slackapi/slack-github-action@v1
+        with:
+          channel-id: ${{ input.channel }}
+          payload: ${{  steps.build_notification_payload.outputs.result  }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.slack_token }}
