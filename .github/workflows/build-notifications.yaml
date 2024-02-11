@@ -25,11 +25,11 @@ jobs:
       - uses: './actions/build-notification-payload'
         id: build_notification_payload
         with:
-          needs: ${{ toJSON( input.needs ) }}
+          needs: ${{ toJSON( inputs.needs ) }}
 
       - uses: slackapi/slack-github-action@v1
         with:
-          channel-id: ${{ input.channel }}
+          channel-id: ${{ inputs.channel }}
           payload: ${{  steps.build_notification_payload.outputs.result  }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.slack_token }}
