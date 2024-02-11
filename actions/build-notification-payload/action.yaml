@@ -1,0 +1,15 @@
+name: 'build-notification-message'
+description: 'build notification message'
+
+inputs:
+  needs:
+    description: 'needs object from calling workflow'
+    required: true
+
+outputs:
+  result:
+    description: 'payload to send to slack'
+
+runs:
+  using: 'node20'
+  main: 'index.js'
