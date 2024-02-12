@@ -1,0 +1,37 @@
+name: 'smoke-test'
+description: 'checking for a specific end-point'
+
+inputs:
+  version:
+    description: 'version to check for'
+    required: true
+  wait_interval:
+    description: 'amount of seconds to wait between each health check'
+    default: '6'
+
+runs:
+  using: 'composite'
+
+  steps:
+    - shell: bash
+      run: |
+        wait_interval=${{ inputs.wait_interval }}
+        health_endpoint="https://81445a13a4f840ffabc16875eca58ab7.api.mockbin.io/"
+        
+        for i in {1..20}; do
+          current_version=$(curl -s "$health_endpoint" | jq -r '.version')
+          echo "current version: ${current_version}"
+        
+          new_version="${{ inputs.version }}"
+          echo "new version: ${new_version}"
+        
+           if [ "$current_version" == "$new_version" ]; then
+             echo "successfully matched version"
+             exit 0
+           else
+             sleep ${wait_interval}
+           fi
+        done
+        
+        echo "failed to verify the deployed version of server"
+        exit 1
