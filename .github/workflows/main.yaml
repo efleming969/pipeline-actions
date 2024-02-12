@@ -42,13 +42,3 @@ jobs:
     uses: './.github/workflows/reusable.yaml'
     with:
       name: "World"
-
-  job4:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: './actions/smoke-test'
-        with:
-          version: 1234
