@@ -19,7 +19,25 @@ jobs:
           echo 'results of previous step'
           echo ${{ steps.greeting.outputs.result }}
 
+      - id: the_time
+        run: |
+          echo 'storing data in output environment'
+          echo "result=$(date)" >> $GITHUB_OUTPUT
+
+    outputs:
+      result: ${{ steps.the_time.outputs.result }}
+
   job2:
+    needs: [ job1 ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "=================================================="
+          echo ${{ needs.job1.outputs.result }}
+          echo "=================================================="
+
+  job3:
     needs: [ job1 ]
     uses: './.github/workflows/reusable.yaml'
     with:
