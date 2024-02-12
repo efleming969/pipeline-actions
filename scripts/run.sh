@@ -3,4 +3,4 @@
 act \
   --container-architecture='linux/amd64' \
   --artifact-server-path .tmp \
-  -j job2
+  -j job4
